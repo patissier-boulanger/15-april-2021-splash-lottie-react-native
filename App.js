@@ -1,11 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
+import * as SplashScreen from "expo-splash-screen";
+import splash from "./assets/splashWithout.png";
+import LottieView from "lottie-react-native";
 
 export default function App() {
+  useEffect(() => {
+    const prepare = async () => {
+      SplashScreen.preventAutoHideAsync();
+      setTimeout(() => {
+        SplashScreen.hideAsync();
+      }, 300);
+    };
+
+    prepare();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <ImageBackground source={splash} style={styles.stretch} />
+      <LottieView
+        source={require("./assets/animation_knhnkiqs.json")}
+        style={{
+          position: "absolute",
+          alignSelf: "center",
+          width: 100,
+          height: 100,
+          backgroundColor: "#F2994A",
+        }}
+        autoPlay
+        loop
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -14,8 +40,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "flex-end",
+  },
+  stretch: {
+    flex: 1,
+    resizeMode: "cover",
   },
 });
