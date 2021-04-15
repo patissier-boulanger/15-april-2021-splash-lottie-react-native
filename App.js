@@ -9,10 +9,11 @@ import {
   SafeAreaView,
 } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import splash from "./assets/splashWithout.png";
+import splash from "./assets/newSplash.png";
 import LottieView from "lottie-react-native";
-import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
+import * as Font from "expo-font";
+import SvgTest from "./svg";
 
 export default function App() {
   const [isFontLoaded, setIsFontLoaded] = useState(false);
@@ -58,6 +59,7 @@ export default function App() {
           <Text style={{ fontFamily: "Rubik", fontSize: 20 }}>
             RubikRubikRubikRubikRubikRubikRubik
           </Text>
+          <SvgTest />
         </SafeAreaView>
       )}
     </>

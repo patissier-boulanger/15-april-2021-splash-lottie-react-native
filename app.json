@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/bibinoIcon.png",
     "splash": {
-      "image": "./assets/splashWithout.png",
+      "image": "./assets/newSplash.png",
       "resizeMode": "cover"
     },
     "updates": {
