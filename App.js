@@ -30,7 +30,8 @@ export default function App() {
           backgroundColor: "#F2994A",
         }}
         autoPlay
-        loop
+        loop={false}
+        speed={0.5}
       />
       <StatusBar style="auto" />
     </View>
